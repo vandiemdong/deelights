@@ -18,906 +18,908 @@
 
 
 
-<div class="ibox-content">
-            <div id="reportContainerhhhh" class="hfhfh">
-            
+    <div class="ibox-content">
+        <div id="reportContainer" class="report-overflow daily-attendance-report">
 
-<style>
-    /* This can be overriden depending on reports */
-    @media print {
-        .reports .rowPrint, .rowPrint td div, .rowPrint th div {
-            overflow: hidden;
-            height: 15px;
-        }
-    }
-</style>
 
-        <style>
-            @media print {
-                /* This should be same for each report */
-                body {
-                    width: 100%;
-                    line-height: 1.0;
-                    font-size: 13px;
+            <style>
+                /* This can be overriden depending on reports */
+                @media print {
+                    .reports .rowPrint, .rowPrint td div, .rowPrint th div {
+                        overflow: hidden;
+                        height: 15px;
+                    }
                 }
+            </style>
 
-                @page {
-                    margin: 0;
-                    size: A4 landscape;
+            <style>
+                @media print {
+                    /* This should be same for each report */
+                    body {
+                        width: 100%;
+                        line-height: 1.0;
+                        font-size: 13px;
+                    }
+
+                    @page {
+                        margin: 0;
+                        size: A4 landscape;
+                    }
+
+                    .page {
+                        width: 297mm;
+                        max-height: 209mm;
+                        padding: 1cm;
+                        border-radius: 5px;
+                        background: white;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                        overflow: hidden;
+                        margin: 0;
+                        page-break-after: always;
+                    }
+
+                    .child-contact-report-export-as-pdf-section .page {
+                        width: 275mm;
+                    }
+
+                    .subpage {
+                        min-height: 189mm;
+                        outline: 1cm;
+                        overflow: hidden;
+                    }
+
+                    .child-contact-report-export-as-pdf-section .table-bordered tbody tr td, .child-contact-report-export-as-pdf-section .table-bordered .rowPrint th {
+                        border-left: 2px #e7e7e7 solid !important;
+                        border-top: 2px #e7e7e7 solid !important;
+                    }
+
+                        /* Wrap child-contact-report title field */
+                        .child-contact-report-export-as-pdf-section .table-bordered .rowPrint th div {
+                            height: auto;
+                            max-height: 24px;
+                        }
+
+                    .child-contact-report-export-as-pdf-section .table-striped > tbody > tr:nth-of-type(odd) {
+                        background-color: #f9f9f9 !important;
+                    }
+
+                    .child-contact-report-export-as-pdf-section .table-striped > tbody > tr:nth-of-type(even) {
+                        background-color: #fff !important;
+                    }
                 }
+            </style>
 
-                .page {
-                    width: 297mm;
-                    max-height: 209mm;
-                    padding: 1cm;
-                    border-radius: 5px;
-                    background: white;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-                    overflow: hidden;
-                    margin: 0;
-                    page-break-after: always;
-                }
+            <div class="page">
+                <div class="subpage">
+                    <table class='reports-table table-striped table-bordered table-responsive daily-attendance-data daily-attendance-summary'>
+                        <tr class="report-table-header rowPrint">
+                            <td class="copy-plain" colspan=27>
+                                <div class="headerTable">
+                                    <table width="100%" style="margin-bottom: 0px;">
+                                        <tr>
 
-                .child-contact-report-export-as-pdf-section .page {
-                    width: 275mm;                  
-                }
+                                            <th class="report-header-left staff-roster-report-header-left copy-plain">
 
-                .subpage {
-                    min-height: 189mm;
-                    outline: 1cm;
-                    overflow: hidden;
-                }
 
-                .child-contact-report-export-as-pdf-section .table-bordered tbody tr td, .child-contact-report-export-as-pdf-section .table-bordered .rowPrint th {
-                    border-left: 2px #e7e7e7 solid !important;
-                    border-top: 2px #e7e7e7 solid !important;
-                }
+                                            </th>
+                                            <th class="staff-roster-report-header-center copy-plain">
+                                                <div class="report-header-row report-header-tablet-forms">
+                                                    <h3 style="text-align:center"><span id="LabelForName">Daily Attendance for Mon 19 Dec 2022</span></h3>
+                                                </div>
+                                            </th>
+                                            <th class="report-header-right staff-roster-report-header-right copy-plain">
 
-                /* Wrap child-contact-report title field */
-                .child-contact-report-export-as-pdf-section .table-bordered .rowPrint th div {height:auto; max-height:24px;
-                }
 
-                .child-contact-report-export-as-pdf-section .table-striped > tbody > tr:nth-of-type(odd) {
-                    background-color: #f9f9f9 !important;
-                }
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <table width="100%" style="margin-bottom: 0px;">
+                                        <tr>
+                                            <th class="report-header-left staff-roster-report-header-left copy-plain">
+                                                <div>
+                                                    <div><h5>All Rooms</h5></div>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </th>
+                                            <th class="staff-roster-report-header-center copy-plain">
+                                                <div class="report-header-row">
+                                                    <h3 style="text-align:center"> T2 Above and Beyond Papamoa</h3>
+                                                </div>
+                                            </th>
+                                            <th class="report-header-right staff-roster-report-header-right copy-plain">
+                                                <h5 id="report-page-no" class="report-header-left">
+                                                    <span>Page <span class="page-number">1</span> of <span class="total-pages">1</span></span>
+                                                </h5>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3">
+                                                <div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
 
-                .child-contact-report-export-as-pdf-section .table-striped > tbody > tr:nth-of-type(even) {
-                    background-color: #fff !important;
-                }
-            }
-        </style>
+                        <tr class="rowPrint standard-row-height">
+                            <th class="record-number">
+                                <div>#</div>
+                            </th>
+                            <th>
+                                <div>Room</div>
+                            </th>
+                            <th class="text-nowrap text-center">
+                                07:00 - 08:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                08:00 - 09:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                09:00 - 10:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                10:00 - 11:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                11:00 - 12:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                12:00 - 13:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                13:00 - 14:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                14:00 - 15:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                15:00 - 16:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                16:00 - 17:00
+                            </th>
+                            <th class="text-nowrap text-center">
+                                17:00 - 18:00
+                            </th>
 
-                    <div class="page">
-                        <div class="subpage">
-                            <table class='reports-table table-striped table-bordered table-responsive daily-attendance-data daily-attendance-summary'>
-                                <tr class="report-table-header rowPrint">
-                                    <td class="copy-plain" colspan=27>
-<div class="headerTable">
-    <table width="100%" style="margin-bottom: 0px;">
-        <tr>
-            
-            <th class="report-header-left staff-roster-report-header-left copy-plain">
+                        </tr>
+                        <tbody>
+                            <tr class="rowPrint">
+                                <td class="record-number">
+                                    1
+                                </td>
+                                <td class="font-bold">
+                                    <div>
+                                        <label class="text-nowrap" for="Nursery">Nursery</label>
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
 
-                
-            </th>
-            <th class="staff-roster-report-header-center copy-plain">
-                <div class="report-header-row report-header-tablet-forms">
-                    <h3 style="text-align:center"><span id="LabelForName">Daily Attendance for Mon 19 Dec 2022</span></h3>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">2</label>        <span>|</span>
+                                        <label for="">3</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">3</label>        <span>|</span>
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">5</label>        <span>|</span>
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">3</label>        <span>|</span>
+                                        <label for="">3</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">3</label>        <span>|</span>
+                                        <label for="">3</label>        <span>|</span>
+                                        <label for="">3</label>        <span>|</span>
+                                        <label for="">3</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">2</label>        <span>|</span>
+                                        <label for="">2</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="rowPrint">
+                                <td class="record-number">
+                                    2
+                                </td>
+                                <td class="font-bold">
+                                    <div>
+                                        <label class="text-nowrap" for="Toddlers">Toddlers</label>
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">2</label>        <span>|</span>
+                                        <label for="">2</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="rowPrint">
+                                <td class="record-number">
+                                    3
+                                </td>
+                                <td class="font-bold">
+                                    <div>
+                                        <label class="text-nowrap" for="Young_Children">Young Children</label>
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">10</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">14</label>        <span>|</span>
+                                        <label for="">14</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">14</label>        <span>|</span>
+                                        <label for="">14</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">14</label>        <span>|</span>
+                                        <label for="">14</label>        <span>|</span>
+                                        <label for="">13</label>        <span>|</span>
+                                        <label for="">13</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">13</label>        <span>|</span>
+                                        <label for="">13</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">12</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">8</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">5</label>        <span>|</span>
+                                        <label for="">5</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="rowPrint">
+                                <td class="record-number">
+                                    4
+                                </td>
+                                <td class="font-bold">
+                                    <div>
+                                        <label class="text-nowrap" for="Overs">Overs</label>
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+                                        <label for="">6</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">8</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+                                        <label for="">12</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">17</label>        <span>|</span>
+                                        <label for="">17</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">18</label>        <span>|</span>
+                                        <label for="">18</label>        <span>|</span>
+                                        <label for="">18</label>        <span>|</span>
+                                        <label for="">18</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">14</label>        <span>|</span>
+                                        <label for="">14</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">9</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+                                        <label for="">7</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">5</label>        <span>|</span>
+                                        <label for="">5</label>        <span>|</span>
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">4</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">4</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr class="rowPrint">
+                                <th colspan="2">
+                                    <div>
+                                        Centre Total (Booked)
+                                    </div>
+                                </th>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">21</label>        <span>|</span>
+                                        <label for="">22</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">27</label>        <span>|</span>
+                                        <label for="">31</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">48</label>        <span>|</span>
+                                        <label for="">48</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">52</label>        <span>|</span>
+                                        <label for="">52</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">50</label>        <span>|</span>
+                                        <label for="">50</label>        <span>|</span>
+                                        <label for="">49</label>        <span>|</span>
+                                        <label for="">49</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">49</label>        <span>|</span>
+                                        <label for="">49</label>        <span>|</span>
+                                        <label for="">48</label>        <span>|</span>
+                                        <label for="">48</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">42</label>        <span>|</span>
+                                        <label for="">42</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">30</label>        <span>|</span>
+                                        <label for="">28</label>        <span>|</span>
+                                        <label for="">25</label>        <span>|</span>
+                                        <label for="">25</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">11</label>        <span>|</span>
+                                        <label for="">11</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr class="rowPrint">
+                                <th colspan="2">
+                                    <div>
+                                        Centre Total (Attending)
+                                    </div>
+                                </th>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">21</label>        <span>|</span>
+                                        <label for="">22</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">27</label>        <span>|</span>
+                                        <label for="">31</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">48</label>        <span>|</span>
+                                        <label for="">48</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">52</label>        <span>|</span>
+                                        <label for="">52</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+                                        <label for="">51</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">50</label>        <span>|</span>
+                                        <label for="">50</label>        <span>|</span>
+                                        <label for="">49</label>        <span>|</span>
+                                        <label for="">49</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">49</label>        <span>|</span>
+                                        <label for="">49</label>        <span>|</span>
+                                        <label for="">48</label>        <span>|</span>
+                                        <label for="">48</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">42</label>        <span>|</span>
+                                        <label for="">42</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+                                        <label for="">38</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">30</label>        <span>|</span>
+                                        <label for="">28</label>        <span>|</span>
+                                        <label for="">25</label>        <span>|</span>
+                                        <label for="">25</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">19</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+                                        <label for="">15</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-center">
+                                    <div class="record-footer">
+
+                                        <label for="">11</label>        <span>|</span>
+                                        <label for="">11</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+                                        <label for="">0</label>        <span>|</span>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </th>
-            <th class="report-header-right staff-roster-report-header-right copy-plain">
-
-                
-            </th>
-        </tr>
-    </table>
-    <table width="100%" style="margin-bottom: 0px;">
-        <tr>
-            <th class="report-header-left staff-roster-report-header-left copy-plain">
-                <div>
-                        <div><h5>All Rooms</h5></div>
-                </div>
-                <div>
-                </div>
-            </th>
-            <th class="staff-roster-report-header-center copy-plain">
-                <div class="report-header-row">
-                    <h3 style="text-align:center"> T2 Above and Beyond Papamoa</h3>
-                </div>
-            </th>
-            <th class="report-header-right staff-roster-report-header-right copy-plain">
-                    <h5 id="report-page-no" class="report-header-left">
-                        <span>Page <span class="page-number">1</span> of <span class="total-pages">1</span></span>
-                    </h5>
-            </th>
-        </tr>
-        <tr>
-            <th colspan="3">
-                <div>
-                </div>
-            </th>
-        </tr>
-    </table>
-</div>
-                                    </td>
-                                </tr>
-
-                                <tr class="rowPrint standard-row-height">
-                                    <th class="record-number">
-                                        <div>#</div>
-                                    </th>
-                                    <th>
-                                        <div>Room</div>
-                                    </th>
-                                            <th class="text-nowrap text-center">
-                                                07:00 - 08:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                08:00 - 09:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                09:00 - 10:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                10:00 - 11:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                11:00 - 12:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                12:00 - 13:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                13:00 - 14:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                14:00 - 15:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                15:00 - 16:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                16:00 - 17:00
-                                            </th>
-                                            <th class="text-nowrap text-center">
-                                                17:00 - 18:00
-                                            </th>
-
-                                </tr>
-                                <tbody>
-                                            <tr class="rowPrint">
-                                                    <td class="record-number">
-                                                        1
-                                                    </td>
-                                                    <td class="font-bold">
-                                                        <div>
-                                                            <label class="text-nowrap" for="Nursery">Nursery</label>
-                                                        </div>
-                                                    </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">2</label>        <span>|</span>
-<label for="">3</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">3</label>        <span>|</span>
-<label for="">4</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">5</label>        <span>|</span>
-<label for="">4</label>        <span>|</span>
-<label for="">3</label>        <span>|</span>
-<label for="">3</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">3</label>        <span>|</span>
-<label for="">3</label>        <span>|</span>
-<label for="">3</label>        <span>|</span>
-<label for="">3</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">2</label>        <span>|</span>
-<label for="">2</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-
-                                            </tr>
-                                            <tr class="rowPrint">
-                                                    <td class="record-number">
-                                                        2
-                                                    </td>
-                                                    <td class="font-bold">
-                                                        <div>
-                                                            <label class="text-nowrap" for="Toddlers">Toddlers</label>
-                                                        </div>
-                                                    </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">4</label>        <span>|</span>
-<label for="">4</label>        <span>|</span>
-<label for="">2</label>        <span>|</span>
-<label for="">2</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-
-                                            </tr>
-                                            <tr class="rowPrint">
-                                                    <td class="record-number">
-                                                        3
-                                                    </td>
-                                                    <td class="font-bold">
-                                                        <div>
-                                                            <label class="text-nowrap" for="Young_Children">Young Children</label>
-                                                        </div>
-                                                    </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">8</label>        <span>|</span>
-<label for="">10</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">14</label>        <span>|</span>
-<label for="">14</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">14</label>        <span>|</span>
-<label for="">14</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">14</label>        <span>|</span>
-<label for="">14</label>        <span>|</span>
-<label for="">13</label>        <span>|</span>
-<label for="">13</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">13</label>        <span>|</span>
-<label for="">13</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">12</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">9</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-<label for="">8</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">5</label>        <span>|</span>
-<label for="">5</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-
-                                            </tr>
-                                            <tr class="rowPrint">
-                                                    <td class="record-number">
-                                                        4
-                                                    </td>
-                                                    <td class="font-bold">
-                                                        <div>
-                                                            <label class="text-nowrap" for="Overs">Overs</label>
-                                                        </div>
-                                                    </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-<label for="">6</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">8</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-<label for="">12</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">17</label>        <span>|</span>
-<label for="">17</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">18</label>        <span>|</span>
-<label for="">18</label>        <span>|</span>
-<label for="">18</label>        <span>|</span>
-<label for="">18</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">14</label>        <span>|</span>
-<label for="">14</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">9</label>        <span>|</span>
-<label for="">9</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-<label for="">7</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">5</label>        <span>|</span>
-<label for="">5</label>        <span>|</span>
-<label for="">4</label>        <span>|</span>
-<label for="">4</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-nowrap text-center">
-                                                            <div class="record-footer">
-                                                                
-                                                                <label for="">4</label>        <span>|</span>
-<label for="">4</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-
-                                                            </div>
-                                                        </td>
-
-                                            </tr>
-
-
-                                    
-                                    <tr class="rowPrint">
-                                        <th colspan="2">
-                                            <div>
-                                                Centre Total (Booked)
-                                            </div>
-                                        </th>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">21</label>        <span>|</span>
-<label for="">22</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">27</label>        <span>|</span>
-<label for="">31</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">48</label>        <span>|</span>
-<label for="">48</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">52</label>        <span>|</span>
-<label for="">52</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">50</label>        <span>|</span>
-<label for="">50</label>        <span>|</span>
-<label for="">49</label>        <span>|</span>
-<label for="">49</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">49</label>        <span>|</span>
-<label for="">49</label>        <span>|</span>
-<label for="">48</label>        <span>|</span>
-<label for="">48</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">42</label>        <span>|</span>
-<label for="">42</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">30</label>        <span>|</span>
-<label for="">28</label>        <span>|</span>
-<label for="">25</label>        <span>|</span>
-<label for="">25</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">11</label>        <span>|</span>
-<label for="">11</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-
-                                    </tr>
-
-                                    
-                                    <tr class="rowPrint">
-                                        <th colspan="2">
-                                            <div>
-                                                Centre Total (Attending)
-                                            </div>
-                                        </th>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">21</label>        <span>|</span>
-<label for="">22</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">27</label>        <span>|</span>
-<label for="">31</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">48</label>        <span>|</span>
-<label for="">48</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">52</label>        <span>|</span>
-<label for="">52</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-<label for="">51</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">50</label>        <span>|</span>
-<label for="">50</label>        <span>|</span>
-<label for="">49</label>        <span>|</span>
-<label for="">49</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">49</label>        <span>|</span>
-<label for="">49</label>        <span>|</span>
-<label for="">48</label>        <span>|</span>
-<label for="">48</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">42</label>        <span>|</span>
-<label for="">42</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-<label for="">38</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">30</label>        <span>|</span>
-<label for="">28</label>        <span>|</span>
-<label for="">25</label>        <span>|</span>
-<label for="">25</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">19</label>        <span>|</span>
-<label for="">19</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-<label for="">15</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-                                                <td class="text-nowrap text-center">
-                                                    <div class="record-footer">
-                                                        
-                                                        <label for="">11</label>        <span>|</span>
-<label for="">11</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-<label for="">0</label>        <span>|</span>
-
-                                                    </div>
-                                                </td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            </div>
 
         </div>
 
-</div>
+    </div>
 
 </body>
 </html>
